@@ -9,7 +9,7 @@ clear; close all; clc;
 % Set parameters ("impResponse_long.wav" case)
 impResPath = "./impResponse_long.wav";
 bpfFreq = 500; % Center frequency ([Hz]) of band-pass filter (if bpfFreq == 0, filtering will not be applied)
-interval = [15, 45]; % Energy interval ([dB]) for linear regression
+interval = [5, 20]; % Energy interval ([dB]) for linear regression
 
 % Read impulse response
 [sig, fs] = audioread(impResPath);

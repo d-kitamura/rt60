@@ -40,7 +40,8 @@ end
 
 % Calculate Schroeder integral
 powImpRes = impRes.^2; % Power (energy) of impulse response
-revCurve = sum(powImpRes) - cumsum(powImpRes); % Schroeder integral
+% revCurve = sum(powImpRes) - cumsum(powImpRes); % Schroeder integral
+revCurve = cumsum(powImpRes, 1, "reverse"); % Schroeder integral (avoiding cancellation of significant digits)
 revCurve = revCurve./max(revCurve); % Normalization
 logRevCurve = 10*log10(max(revCurve, eps)); % Convert to dB
 

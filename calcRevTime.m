@@ -68,10 +68,10 @@ if isPlot
     xlabel("Time [s]"); ylabel("Reverberation energy [dB]");
     hold on;
     plot(timeAx, a*timeAx + b, "LineWidth", 1);
-    yline(-regIntvl(1), '-r', {'Reg begin point'}, "LabelHorizontalAlignment", "left", "LabelVerticalAlignment", "bottom", "FontSize", 11);
-    yline(-regIntvl(2), '-r', {'Reg end point'}, "LabelHorizontalAlignment", "left", "LabelVerticalAlignment", "bottom", "FontSize", 11);
-    xline(beginPnt, '-r', {'RT60 begin point'}, "LabelVerticalAlignment", "bottom", "FontSize", 11);
-    xline(endPnt, '-r', {'RT60 end point'}, "LabelVerticalAlignment", "bottom", "FontSize", 11);
+    yline(-regIntvl(1), '-r', {'Begin point of regression'}, "LabelHorizontalAlignment", "left", "LabelVerticalAlignment", "bottom", "FontSize", 11);
+    yline(-regIntvl(2), '-r', {'End point of regression'}, "LabelHorizontalAlignment", "left", "LabelVerticalAlignment", "bottom", "FontSize", 11);
+    xline(beginPnt, '-r', {'Begin point of T60'}, "LabelVerticalAlignment", "bottom", "FontSize", 11);
+    xline(endPnt, '-r', {'End point of T60'}, "LabelVerticalAlignment", "bottom", "FontSize", 11);
     legend(["Reverberation curve", sprintf("Linear regression in [%d, %d] dB", -1*regIntvl(1), -1*regIntvl(2))]);
     fprintf("Reverberation time (RT60) is %.3f [ms].\n", rt60*1000);
     hold off;
